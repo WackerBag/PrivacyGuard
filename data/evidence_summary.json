@@ -1,0 +1,68 @@
+{
+  "snapshot_date": "2026-10-03",
+  "source_rows": 13083,
+  "train_rows": 10003,
+  "test_rows": 3080,
+  "intent_classes": 77,
+  "injection_rows": 13083,
+  "variant_rows": 52332,
+  "sanitized_rows": 39249,
+  "sanitized_known_value_absence_passed": 39249,
+  "eligible_train_rows": 9992,
+  "official_test_rows": 3080,
+  "modeling_version_rows": 52288,
+  "human_review_records": 24,
+  "sample_record": {
+    "record_id": "B77_train_00005",
+    "category": "card_arrival",
+    "source_text": "When did you send me my new card?",
+    "injection": {
+      "record_id": "B77_train_00005",
+      "pii_type": "EMAIL",
+      "pii_value": "davisstephanie@example.com",
+      "start_char": 46,
+      "end_char": 72,
+      "template_id": "suffix",
+      "locale": "en_US",
+      "seed": 553,
+      "faker_version": "37.12.0",
+      "generated_date": "2026-10-03",
+      "raw_text": "When did you send me my new card? My email is davisstephanie@example.com.",
+      "is_synthetic": true
+    },
+    "variants": [
+      {
+        "record_id": "B77_train_00005",
+        "split": "train",
+        "category": "card_arrival",
+        "mask_method": "raw",
+        "transformed_text": "When did you send me my new card? My email is davisstephanie@example.com.",
+        "removal_pass": null
+      },
+      {
+        "record_id": "B77_train_00005",
+        "split": "train",
+        "category": "card_arrival",
+        "mask_method": "delete",
+        "transformed_text": "When did you send me my new card? My email is .",
+        "removal_pass": true
+      },
+      {
+        "record_id": "B77_train_00005",
+        "split": "train",
+        "category": "card_arrival",
+        "mask_method": "generic",
+        "transformed_text": "When did you send me my new card? My email is [REDACTED].",
+        "removal_pass": true
+      },
+      {
+        "record_id": "B77_train_00005",
+        "split": "train",
+        "category": "card_arrival",
+        "mask_method": "typed",
+        "transformed_text": "When did you send me my new card? My email is [EMAIL].",
+        "removal_pass": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "project": "PrivacyGuard",
+  "milestone": 2,
+  "snapshot_date": "2026-10-03",
+  "generator": {
+    "library": "Faker",
+    "version": "37.12.0",
+    "locale": "en_US",
+    "seed": 553,
+    "pii_types": [
+      "PERSON",
+      "EMAIL",
+      "PHONE",
+      "ADDRESS"
+    ],
+    "placements": [
+      "prefix",
+      "suffix"
+    ]
+  },
+  "banking77": {
+    "train": {
+      "source_url": "https://raw.githubusercontent.com/PolyAI-LDN/task-specific-datasets/master/banking_data/train.csv",
+      "local_file": "data/train.csv",
+      "bytes": 839073,
+      "sha256": "b06e26ac675513959a63135f11b94ea7786ed02da65db93a5650d8838cbc664b",
+      "rows": 10003,
+      "acquired_date": "2026-10-03"
+    },
+    "test": {
+      "source_url": "https://raw.githubusercontent.com/PolyAI-LDN/task-specific-datasets/master/banking_data/test.csv",
+      "local_file": "data/test.csv",
+      "bytes": 239961,
+      "sha256": "d12d6e3bc4c3103966ae786dc435913c0c563dfa328f5a3646d0e62cfeeb474d",
+      "rows": 3080,
+      "acquired_date": "2026-10-03"
+    }
+  },
+  "derived_files": {
+    "banking_records.jsonl": {
+      "bytes": 4650207,
+      "sha256": "aafa585734539f99417486963e376c9ca663f2cf62817e20d152669977f59f47"
+    },
+    "pii_injections.jsonl": {
+      "bytes": 4956633,
+      "sha256": "f7da386d54e8388a82160bf65cf62c81446add371c16c89839737ab54c515c3e"
+    },
+    "variants.jsonl": {
+      "bytes": 12577500,
+      "sha256": "4e3caa586fe8382652a758db501ba51bf9717d0b59eec38f06e0b862be0ffaec"
+    },
+    "eligibility.jsonl": {
+      "bytes": 1132234,
+      "sha256": "f72981a179aaa7a68a920126ad0c8247bd010716c81e275693953f78fb9ef433"
+    },
+    "profile.json": {
+      "bytes": 1174,
+      "sha256": "c4cc64f6a3aee2667568b78029a7d03d99129ab14cce367693e4e7d93364ccbc"
+    },
+    "review_samples.jsonl": {
+      "bytes": 25659,
+      "sha256": "732c96abb719802f294dfd204479be7eb399181b2e59258c439d15cee7b4803e"
+    },
+    "human_review_24.csv": {
+      "bytes": 14531,
+      "sha256": "eb5a307e0173a70f57dc0d668a7a4eb2a3c281f98ac0f19aa47da60100014730"
+    },
+    "evidence_summary.json": {
+      "bytes": 2089,
+      "sha256": "5ce0094ec61b4a98effa899368d1b83846c8a6f97d02c715422ca2b32a427030"
+    }
+  }
+}

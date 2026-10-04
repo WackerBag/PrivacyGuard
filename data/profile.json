@@ -1,0 +1,52 @@
+{
+  "train": {
+    "rows": 10003,
+    "classes": 77,
+    "class_min": 35,
+    "class_max": 187,
+    "blank_text": 0,
+    "blank_label": 0,
+    "exact_duplicate_texts": 0,
+    "normalized_duplicate_texts": 4,
+    "min_chars": 13,
+    "max_chars": 433
+  },
+  "test": {
+    "rows": 3080,
+    "classes": 77,
+    "class_min": 40,
+    "class_max": 40,
+    "blank_text": 0,
+    "blank_label": 0,
+    "exact_duplicate_texts": 0,
+    "normalized_duplicate_texts": 1,
+    "min_chars": 13,
+    "max_chars": 368
+  },
+  "cross_split_normalized_overlap": 7,
+  "total_records": 13083,
+  "total_spans": 13083,
+  "total_variants": 52332,
+  "sanitized_variants": 39249,
+  "failed_removals": 0,
+  "type_counts": {
+    "ADDRESS": 3351,
+    "EMAIL": 3161,
+    "PERSON": 3235,
+    "PHONE": 3336
+  },
+  "faker_version": "37.12.0",
+  "seed": 553,
+  "date": "2026-10-03",
+  "normalization_changed_rows": 569,
+  "unique_ids": 13083,
+  "join_orphans": 0,
+  "human_review": "pending student sign-off before M3 model runs",
+  "train_eligible": 9992,
+  "exclusion_reasons": {
+    "duplicate_train_text": 4,
+    "train_test_overlap": 7
+  },
+  "conflicting_train_text_groups": 0,
+  "test_retained": 3080
+}
