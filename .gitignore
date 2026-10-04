@@ -1,6 +1,7 @@
 __pycache__/
 *.py[cod]
 .venv/
+.venv-presidio/
 venv/
 .env
 .DS_Store

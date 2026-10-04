@@ -1,0 +1,457 @@
+{
+  "summary": {
+    "records_checked": 13083,
+    "seed": 553,
+    "records_with_overlapping_spans": 3428,
+    "by_type": {
+      "ADDRESS": {
+        "n": 3351,
+        "found": 1125,
+        "detector_recall": 0.3357,
+        "found_full_span": 0,
+        "full_span_recall": 0.0,
+        "value_still_present_after_literal_mask": {
+          "delete": 912,
+          "generic": 912,
+          "typed": 912
+        },
+        "value_still_present_after_merged_mask": {
+          "delete": 912,
+          "generic": 912,
+          "typed": 912
+        }
+      },
+      "EMAIL": {
+        "n": 3161,
+        "found": 3161,
+        "detector_recall": 1.0,
+        "found_full_span": 3161,
+        "full_span_recall": 1.0,
+        "value_still_present_after_literal_mask": {
+          "delete": 0,
+          "generic": 0,
+          "typed": 0
+        },
+        "value_still_present_after_merged_mask": {
+          "delete": 0,
+          "generic": 0,
+          "typed": 0
+        }
+      },
+      "PERSON": {
+        "n": 3235,
+        "found": 3191,
+        "detector_recall": 0.9864,
+        "found_full_span": 3101,
+        "full_span_recall": 0.9586,
+        "value_still_present_after_literal_mask": {
+          "delete": 32,
+          "generic": 32,
+          "typed": 32
+        },
+        "value_still_present_after_merged_mask": {
+          "delete": 32,
+          "generic": 32,
+          "typed": 32
+        }
+      },
+      "PHONE": {
+        "n": 3336,
+        "found": 3336,
+        "detector_recall": 1.0,
+        "found_full_span": 3336,
+        "full_span_recall": 1.0,
+        "value_still_present_after_literal_mask": {
+          "delete": 0,
+          "generic": 0,
+          "typed": 0
+        },
+        "value_still_present_after_merged_mask": {
+          "delete": 0,
+          "generic": 0,
+          "typed": 0
+        }
+      }
+    },
+    "overall_detector_recall": 0.8265
+  },
+  "first_30_misses": [
+    {
+      "record_id": "B77_test_00007",
+      "type": "ADDRESS",
+      "value": "318 James Fields Haileyville, ME 46827",
+      "text": "i have not received my card My address is 318 James Fields Haileyville, ME 46827.",
+      "detected": [
+        [
+          "PERSON",
+          46,
+          70,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_00016",
+      "type": "ADDRESS",
+      "value": "3323 Rebecca Burgs Apt. 880 Newtonberg, UT 84243",
+      "text": "My address is 3323 Rebecca Burgs Apt. 880 Newtonberg, UT 84243. I've been waiting longer than expected for my card.",
+      "detected": [
+        [
+          "PERSON",
+          19,
+          36,
+          0.85
+        ],
+        [
+          "PERSON",
+          38,
+          52,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_00029",
+      "type": "ADDRESS",
+      "value": "Unit 5772 Box 4255 DPO AE 13176",
+      "text": "My address is Unit 5772 Box 4255 DPO AE 13176. i want to track the card you sent",
+      "detected": [
+        [
+          "PERSON",
+          19,
+          27,
+          0.85
+        ],
+        [
+          "DATE_TIME",
+          33,
+          45,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_00032",
+      "type": "ADDRESS",
+      "value": "8494 Jeffrey Manors Marcusside, AL 30146",
+      "text": "My address is 8494 Jeffrey Manors Marcusside, AL 30146. How do I know when my card will arrive?",
+      "detected": [
+        [
+          "DATE_TIME",
+          14,
+          44,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_00033",
+      "type": "ADDRESS",
+      "value": "387 Fischer Summit South Stephanie, MA 10553",
+      "text": "I'm still waiting on my card to be delivered. My address is 387 Fischer Summit South Stephanie, MA 10553.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_00057",
+      "type": "ADDRESS",
+      "value": "4306 Jennifer Stream South Victor, SD 07111",
+      "text": "How do I view the card I received in the app? My address is 4306 Jennifer Stream South Victor, SD 07111.",
+      "detected": [
+        [
+          "DATE_TIME",
+          60,
+          64,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_00065",
+      "type": "ADDRESS",
+      "value": "8636 Clark Ports Maldonadoport, GA 94143",
+      "text": "My address is 8636 Clark Ports Maldonadoport, GA 94143. how do I link an already existing card?",
+      "detected": [
+        [
+          "DATE_TIME",
+          14,
+          18,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_00070",
+      "type": "ADDRESS",
+      "value": "728 James Ports Bradleychester, DE 13543",
+      "text": "My address is 728 James Ports Bradleychester, DE 13543. Where do I go if I want to link my new card?",
+      "detected": [
+        [
+          "PERSON",
+          18,
+          44,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_00072",
+      "type": "ADDRESS",
+      "value": "496 Daniel Ville Shelleyland, GU 66704",
+      "text": "Can I reactivate a card I thought I lost? My address is 496 Daniel Ville Shelleyland, GU 66704.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_00074",
+      "type": "ADDRESS",
+      "value": "053 Flores Fall Apt. 612 East Mary, SD 41023",
+      "text": "My address is 053 Flores Fall Apt. 612 East Mary, SD 41023. Where do I need to go in the app to enter my card info?",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_00083",
+      "type": "ADDRESS",
+      "value": "5450 Kelly Well Suite 913 South Jessicafurt, KY 61578",
+      "text": "Where do you guys acquire your exchange rate? My address is 5450 Kelly Well Suite 913 South Jessicafurt, KY 61578.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_00084",
+      "type": "ADDRESS",
+      "value": "559 Mcdonald Camp Apt. 379 East Jason, MS 63358",
+      "text": "How do I find the exchange rate? My address is 559 Mcdonald Camp Apt. 379 East Jason, MS 63358.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_00085",
+      "type": "ADDRESS",
+      "value": "PSC 0394, Box 6721 APO AE 26255",
+      "text": "What are your international exchange rates? My address is PSC 0394, Box 6721 APO AE 26255.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_00089",
+      "type": "ADDRESS",
+      "value": "363 Wilkins Rapids Suite 285 East Amberport, ID 02082",
+      "text": "My address is 363 Wilkins Rapids Suite 285 East Amberport, ID 02082. what are exchange rates based on",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_00098",
+      "type": "ADDRESS",
+      "value": "60840 Michelle Squares Apt. 595 Port Erin, MT 07854",
+      "text": "My address is 60840 Michelle Squares Apt. 595 Port Erin, MT 07854. What currencies is an exchange rate calculated in?",
+      "detected": [
+        [
+          "DATE_TIME",
+          14,
+          19,
+          0.85
+        ],
+        [
+          "PERSON",
+          46,
+          55,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_00104",
+      "type": "ADDRESS",
+      "value": "642 Alice Points New Johnfort, CO 69348",
+      "text": "My address is 642 Alice Points New Johnfort, CO 69348. What foreign exchange rate will you use?",
+      "detected": [
+        [
+          "PERSON",
+          18,
+          30,
+          0.85
+        ],
+        [
+          "PERSON",
+          31,
+          43,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_00105",
+      "type": "ADDRESS",
+      "value": "134 Harvey Knoll Kevinmouth, KS 26367",
+      "text": "My address is 134 Harvey Knoll Kevinmouth, KS 26367. How much will I get with the exchange rate?",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_00111",
+      "type": "ADDRESS",
+      "value": "719 Medina Cliff Suite 388 New Traci, DE 66056",
+      "text": "How are you determining your exchange rates? My address is 719 Medina Cliff Suite 388 New Traci, DE 66056.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_00113",
+      "type": "ADDRESS",
+      "value": "61135 Brooks Forks Suite 893 Hopkinsbury, DC 11410",
+      "text": "My address is 61135 Brooks Forks Suite 893 Hopkinsbury, DC 11410. From where are you getting your exchange rates?",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_00115",
+      "type": "ADDRESS",
+      "value": "78815 Robertson Shoals Apt. 295 Port Anne, PR 30280",
+      "text": "why do your exchange rates change My address is 78815 Robertson Shoals Apt. 295 Port Anne, PR 30280.",
+      "detected": [
+        [
+          "PERSON",
+          48,
+          74,
+          0.85
+        ],
+        [
+          "PERSON",
+          80,
+          89,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_00119",
+      "type": "ADDRESS",
+      "value": "28381 David Knoll Rangelberg, PW 67393",
+      "text": "My address is 28381 David Knoll Rangelberg, PW 67393. What is the current exchange rate for me?",
+      "detected": [
+        [
+          "DATE_TIME",
+          14,
+          19,
+          0.85
+        ],
+        [
+          "PERSON",
+          26,
+          42,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_00121",
+      "type": "ADDRESS",
+      "value": "PSC 4120, Box 9682 APO AE 37078",
+      "text": "I made a currency exchange and think I was charged more than I should of been. My address is PSC 4120, Box 9682 APO AE 37078.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_00124",
+      "type": "ADDRESS",
+      "value": "4786 Parks Points Smithtown, OK 93921",
+      "text": "The exchange rate on my purchase is wrong. My address is 4786 Parks Points Smithtown, OK 93921.",
+      "detected": [
+        [
+          "DATE_TIME",
+          57,
+          61,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_00126",
+      "type": "ADDRESS",
+      "value": "940 Mcintosh Pike West Stephaniestad, AL 36184",
+      "text": "I bought something, but the exchange rate looks wrong. My address is 940 Mcintosh Pike West Stephaniestad, AL 36184.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_00134",
+      "type": "ADDRESS",
+      "value": "0259 Snyder Keys Port Jesse, NV 97587",
+      "text": "My address is 0259 Snyder Keys Port Jesse, NV 97587. I bought an item and noticed the exchange rate was not correct.",
+      "detected": [
+        [
+          "PERSON",
+          31,
+          41,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_00141",
+      "type": "ADDRESS",
+      "value": "USS Simon FPO AE 51587",
+      "text": "My address is USS Simon FPO AE 51587. When I made a purchase last Saturday, I was charged extra. Did I receive the right exchange rate?",
+      "detected": [
+        [
+          "DATE_TIME",
+          61,
+          74,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_00143",
+      "type": "ADDRESS",
+      "value": "7376 Reeves Squares Suite 514 North Joseph, MA 51213",
+      "text": "I believe my card payment exchange rate is incorrect. My address is 7376 Reeves Squares Suite 514 North Joseph, MA 51213.",
+      "detected": [
+        [
+          "DATE_TIME",
+          68,
+          72,
+          0.85
+        ],
+        [
+          "PERSON",
+          98,
+          110,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_00145",
+      "type": "ADDRESS",
+      "value": "0710 Daniel Ferry Apt. 716 Lake Sylvia, FM 01208",
+      "text": "The exchange rate seems off on this transaction My address is 0710 Daniel Ferry Apt. 716 Lake Sylvia, FM 01208.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_00147",
+      "type": "ADDRESS",
+      "value": "PSC 4325, Box 0158 APO AE 43422",
+      "text": "Hi, I don't think your exchange rate is right. I need you to check the official interbank exchange please. My address is PSC 4325, Box 0158 APO AE 43422.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_00148",
+      "type": "ADDRESS",
+      "value": "7444 Tina Court Suite 789 North Jennifer, NV 86303",
+      "text": "My address is 7444 Tina Court Suite 789 North Jennifer, NV 86303. I'm pretty sure something went wrong with my exchange. I changed Russian Ruble to UK pounds and was charged way too much!",
+      "detected": [
+        [
+          "DATE_TIME",
+          14,
+          18,
+          0.85
+        ],
+        [
+          "PERSON",
+          40,
+          54,
+          0.85
+        ],
+        [
+          "LOCATION",
+          148,
+          150,
+          0.85
+        ]
+      ]
+    }
+  ],
+  "total_misses": 2270
+}

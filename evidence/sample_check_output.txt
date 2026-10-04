@@ -1,0 +1,10 @@
+﻿TEXT: 'When did you send me my new card? My email is davisstephanie@example.com.'
+Results (entity_type, start, end, score, matched):
+  EMAIL_ADDRESS, 46, 72, 1.00, 'davisstephanie@example.com'
+  URL, 61, 72, 0.50, 'example.com'
+literal delete  : 'When did you send me my new card? My email is'
+literal generic : 'When did you send me my new card? My email is [REDACTED]'
+literal typed   : 'When did you send me my new card? My email is [EMAIL]'
+merged  delete  : 'When did you send me my new card? My email is .'
+merged  generic : 'When did you send me my new card? My email is [REDACTED].'
+merged  typed   : 'When did you send me my new card? My email is [EMAIL].'

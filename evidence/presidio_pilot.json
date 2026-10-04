@@ -1,0 +1,439 @@
+{
+  "summary": {
+    "records_checked": 1000,
+    "seed": 553,
+    "records_with_overlapping_spans": 247,
+    "by_type": {
+      "ADDRESS": {
+        "n": 263,
+        "found": 85,
+        "detector_recall": 0.3232,
+        "found_full_span": 0,
+        "full_span_recall": 0.0,
+        "value_still_present_after_literal_mask": {
+          "delete": 79,
+          "generic": 79,
+          "typed": 79
+        },
+        "value_still_present_after_merged_mask": {
+          "delete": 79,
+          "generic": 79,
+          "typed": 79
+        }
+      },
+      "EMAIL": {
+        "n": 235,
+        "found": 235,
+        "detector_recall": 1.0,
+        "found_full_span": 235,
+        "full_span_recall": 1.0,
+        "value_still_present_after_literal_mask": {
+          "delete": 0,
+          "generic": 0,
+          "typed": 0
+        },
+        "value_still_present_after_merged_mask": {
+          "delete": 0,
+          "generic": 0,
+          "typed": 0
+        }
+      },
+      "PERSON": {
+        "n": 267,
+        "found": 262,
+        "detector_recall": 0.9813,
+        "found_full_span": 256,
+        "full_span_recall": 0.9588,
+        "value_still_present_after_literal_mask": {
+          "delete": 3,
+          "generic": 3,
+          "typed": 3
+        },
+        "value_still_present_after_merged_mask": {
+          "delete": 3,
+          "generic": 3,
+          "typed": 3
+        }
+      },
+      "PHONE": {
+        "n": 235,
+        "found": 235,
+        "detector_recall": 1.0,
+        "found_full_span": 235,
+        "full_span_recall": 1.0,
+        "value_still_present_after_literal_mask": {
+          "delete": 0,
+          "generic": 0,
+          "typed": 0
+        },
+        "value_still_present_after_merged_mask": {
+          "delete": 0,
+          "generic": 0,
+          "typed": 0
+        }
+      }
+    },
+    "overall_detector_recall": 0.817
+  },
+  "first_30_misses": [
+    {
+      "record_id": "B77_train_02547",
+      "type": "ADDRESS",
+      "value": "424 Wagner Ford Suite 516 Danielton, NH 63165",
+      "text": "Who charged me a fee for paying by card? My address is 424 Wagner Ford Suite 516 Danielton, NH 63165.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_00382",
+      "type": "ADDRESS",
+      "value": "25787 Kimberly Manors Mcdonaldmouth, FM 76343",
+      "text": "My address is 25787 Kimberly Manors Mcdonaldmouth, FM 76343. I broke my card",
+      "detected": [
+        [
+          "PERSON",
+          20,
+          49,
+          0.85
+        ],
+        [
+          "PERSON",
+          51,
+          59,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_03044",
+      "type": "ADDRESS",
+      "value": "305 Brandon Land Churchland, IL 84242",
+      "text": "i live in the US can i still get a card? My address is 305 Brandon Land Churchland, IL 84242.",
+      "detected": [
+        [
+          "LOCATION",
+          14,
+          16,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_02430",
+      "type": "ADDRESS",
+      "value": "24775 Ricky Orchard South Sarahchester, FM 86919",
+      "text": "Are there restrictions for ordering extra cards? My address is 24775 Ricky Orchard South Sarahchester, FM 86919.",
+      "detected": [
+        [
+          "DATE_TIME",
+          63,
+          68,
+          0.85
+        ],
+        [
+          "PERSON",
+          69,
+          101,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_00478",
+      "type": "ADDRESS",
+      "value": "Unit 7801 Box 6101 DPO AE 23531",
+      "text": "My card got stolen! My address is Unit 7801 Box 6101 DPO AE 23531.",
+      "detected": [
+        [
+          "PERSON",
+          39,
+          47,
+          0.85
+        ],
+        [
+          "DATE_TIME",
+          48,
+          65,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_train_04153",
+      "type": "ADDRESS",
+      "value": "PSC 6052, Box 1956 APO AP 99623",
+      "text": "My address is PSC 6052, Box 1956 APO AP 99623. How can I choose between Visa and Mastercard?",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_09256",
+      "type": "ADDRESS",
+      "value": "540 Henry Lock Apt. 003 New Abigailmouth, CT 44075",
+      "text": "My address is 540 Henry Lock Apt. 003 New Abigailmouth, CT 44075. My card activation is failing.",
+      "detected": [
+        [
+          "PERSON",
+          18,
+          32,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_train_01652",
+      "type": "PERSON",
+      "value": "Bryan Wood",
+      "text": "My name is Bryan Wood. How old do you need to be to have an account?",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_08973",
+      "type": "ADDRESS",
+      "value": "9636 Heath Gardens Suite 805 Williamsborough, NJ 65412",
+      "text": "My address is 9636 Heath Gardens Suite 805 Williamsborough, NJ 65412. What is the charge for exchanging currencies?",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_01657",
+      "type": "ADDRESS",
+      "value": "683 Cole Village Apt. 734 Richardton, RI 64474",
+      "text": "My address is 683 Cole Village Apt. 734 Richardton, RI 64474. How old does one need to be?",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_03972",
+      "type": "ADDRESS",
+      "value": "2262 Jermaine View Russellland, NV 56216",
+      "text": "My address is 2262 Jermaine View Russellland, NV 56216. I am having trouble verifying my id.",
+      "detected": [
+        [
+          "PERSON",
+          14,
+          44,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_train_09611",
+      "type": "ADDRESS",
+      "value": "Unit 6403 Box 3353 DPO AP 94312",
+      "text": "If my card is going to expire this month, do I need to order a new one? My address is Unit 6403 Box 3353 DPO AP 94312.",
+      "detected": [
+        [
+          "DATE_TIME",
+          30,
+          40,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_train_04114",
+      "type": "ADDRESS",
+      "value": "USCGC Stewart FPO AA 17038",
+      "text": "Why can I not choose the card i want? My address is USCGC Stewart FPO AA 17038.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_06343",
+      "type": "ADDRESS",
+      "value": "720 Justin Summit Lake Ronald, MP 65031",
+      "text": "My address is 720 Justin Summit Lake Ronald, MP 65031. It looks like I was charged twice for a single transaction",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_01618",
+      "type": "ADDRESS",
+      "value": "318 Johnson Ford Apt. 223 Amandabury, PR 95575",
+      "text": "Why is there a pending transaction on my card? My address is 318 Johnson Ford Apt. 223 Amandabury, PR 95575.",
+      "detected": [
+        [
+          "PERSON",
+          65,
+          77,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_train_09721",
+      "type": "ADDRESS",
+      "value": "Unit 2501 Box 2350 DPO AA 86564",
+      "text": "My address is Unit 2501 Box 2350 DPO AA 86564. Can I top up my account with Google Pay?",
+      "detected": [
+        [
+          "DATE_TIME",
+          28,
+          32,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_train_01255",
+      "type": "ADDRESS",
+      "value": "405 Sean Ridges Apt. 625 Mckinneyfort, SC 36339",
+      "text": "How come my card doesn't work anymore? My address is 405 Sean Ridges Apt. 625 Mckinneyfort, SC 36339.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_02439",
+      "type": "ADDRESS",
+      "value": "2302 Oliver Course Suite 540 Terrytown, MA 43352",
+      "text": "my daughter needs a card, how do i add her? My address is 2302 Oliver Course Suite 540 Terrytown, MA 43352.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_06269",
+      "type": "ADDRESS",
+      "value": "533 Eric Camp Suite 026 Joshuaview, KS 33938",
+      "text": "Why did the ATM take my card and keep it? My address is 533 Eric Camp Suite 026 Joshuaview, KS 33938.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_08065",
+      "type": "ADDRESS",
+      "value": "57042 Freeman Drives Apt. 215 Cardenasstad, SD 33586",
+      "text": "How do I go about getting an actual card? My address is 57042 Freeman Drives Apt. 215 Cardenasstad, SD 33586.",
+      "detected": [
+        [
+          "PERSON",
+          62,
+          69,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_02476",
+      "type": "ADDRESS",
+      "value": "USNV Chandler FPO AP 92917",
+      "text": "I want to top-up using cash My address is USNV Chandler FPO AP 92917.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_08981",
+      "type": "ADDRESS",
+      "value": "Unit 7670 Box 5008 DPO AA 40619",
+      "text": "My address is Unit 7670 Box 5008 DPO AA 40619. I exchange my currency quite a bit. Do I get an exchange price break?",
+      "detected": [
+        [
+          "PERSON",
+          19,
+          27,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_train_06224",
+      "type": "ADDRESS",
+      "value": "Unit 3011 Box 4741 DPO AA 64444",
+      "text": "Close down my account. I don't like your service. My address is Unit 3011 Box 4741 DPO AA 64444.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_02896",
+      "type": "ADDRESS",
+      "value": "Unit 3285 Box 1852 DPO AP 67785",
+      "text": "why don't you accept american express for adding money to my account My address is Unit 3285 Box 1852 DPO AP 67785.",
+      "detected": [
+        [
+          "NRP",
+          21,
+          29,
+          0.85
+        ],
+        [
+          "DATE_TIME",
+          97,
+          101,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_train_09214",
+      "type": "ADDRESS",
+      "value": "6309 Lori Mountain Heatherton, IL 89344",
+      "text": "My address is 6309 Lori Mountain Heatherton, IL 89344. What is needed to activate my card?",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_04992",
+      "type": "ADDRESS",
+      "value": "5945 Anderson Mission East Jordantown, GA 07519",
+      "text": "My address is 5945 Anderson Mission East Jordantown, GA 07519. I attempted to get cash in the ATM but it was not authorized",
+      "detected": [
+        [
+          "DATE_TIME",
+          14,
+          18,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_02581",
+      "type": "ADDRESS",
+      "value": "7667 Jones Orchard Apt. 841 Garzaton, AK 89967",
+      "text": "I feel like too much money was taken during my currency exchange. My address is 7667 Jones Orchard Apt. 841 Garzaton, AK 89967.",
+      "detected": [
+        [
+          "PERSON",
+          80,
+          102,
+          0.85
+        ],
+        [
+          "PERSON",
+          104,
+          116,
+          0.85
+        ],
+        [
+          "DATE_TIME",
+          118,
+          126,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_train_03500",
+      "type": "ADDRESS",
+      "value": "7294 Mark Village Suite 894 Paynemouth, MH 65552",
+      "text": "Just today there was a purchase on my card that wasn't done by me. Can this be reversed and my card be frozen? I can't have this continue! My address is 7294 Mark Village Suite 894 Paynemouth, MH 65552.",
+      "detected": [
+        [
+          "DATE_TIME",
+          153,
+          157,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_train_09769",
+      "type": "ADDRESS",
+      "value": "568 Gordon Ports Debbiefurt, MI 08976",
+      "text": "My address is 568 Gordon Ports Debbiefurt, MI 08976. Is it possible to use my apple watch for topping up?",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_01003",
+      "type": "ADDRESS",
+      "value": "184 Christine Trace Matthewton, OR 87576",
+      "text": "My top-up showed as complete, but it's no longer there! What's going on here? My address is 184 Christine Trace Matthewton, OR 87576.",
+      "detected": [
+        [
+          "PERSON",
+          96,
+          122,
+          0.85
+        ]
+      ]
+    }
+  ],
+  "total_misses": 183
+}
