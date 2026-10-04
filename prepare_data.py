@@ -271,7 +271,9 @@ def main():
     write_jsonl("eligibility.jsonl", eligibility)
     write_jsonl("review_samples.jsonl", [v for v in variants if v["record_id"] in chosen])
     write_json("profile.json", report)
-    write_review_csv(D / "human_review_24.csv", chosen, spans, variants, records)
+    # Machine-generated review sheet. The approved human-review artifact is kept
+    # separately so reproducible reruns never overwrite a completed review.
+    write_review_csv(D / "human_review_24.pre_review.csv", chosen, spans, variants, records)
 
     sample_id = "B77_train_00005"
     sample_span = next(s for s in spans if s["record_id"] == sample_id)
@@ -323,10 +325,15 @@ def main():
             "rows": spec["rows"],
             "acquired_date": DATE,
         }
-    for name in [
+    derived_names = [
         "banking_records.jsonl", "pii_injections.jsonl", "variants.jsonl", "eligibility.jsonl",
-        "profile.json", "review_samples.jsonl", "human_review_24.csv", "evidence_summary.json"
-    ]:
+        "profile.json", "review_samples.jsonl", "human_review_24.pre_review.csv", "evidence_summary.json"
+    ]
+    # If the human review has been completed, include that immutable reviewed
+    # artifact in the manifest without regenerating or modifying it.
+    if (D / "human_review_24.csv").exists():
+        derived_names.append("human_review_24.csv")
+    for name in derived_names:
         p = D / name
         manifest["derived_files"][name] = {
             "bytes": p.stat().st_size,
