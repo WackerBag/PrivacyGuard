@@ -1,0 +1,77 @@
+﻿{
+  "records_checked": 13083,
+  "seed": 553,
+  "address_rule": true,
+  "records_with_overlapping_spans": 5859,
+  "by_type": {
+    "ADDRESS": {
+      "n": 3351,
+      "found": 3351,
+      "detector_recall": 1.0,
+      "found_full_span": 3347,
+      "full_span_recall": 0.9988,
+      "value_still_present_after_literal_mask": {
+        "delete": 0,
+        "generic": 0,
+        "typed": 0
+      },
+      "value_still_present_after_merged_mask": {
+        "delete": 0,
+        "generic": 0,
+        "typed": 0
+      }
+    },
+    "EMAIL": {
+      "n": 3161,
+      "found": 3161,
+      "detector_recall": 1.0,
+      "found_full_span": 3161,
+      "full_span_recall": 1.0,
+      "value_still_present_after_literal_mask": {
+        "delete": 0,
+        "generic": 0,
+        "typed": 0
+      },
+      "value_still_present_after_merged_mask": {
+        "delete": 0,
+        "generic": 0,
+        "typed": 0
+      }
+    },
+    "PERSON": {
+      "n": 3235,
+      "found": 3191,
+      "detector_recall": 0.9864,
+      "found_full_span": 3101,
+      "full_span_recall": 0.9586,
+      "value_still_present_after_literal_mask": {
+        "delete": 32,
+        "generic": 32,
+        "typed": 32
+      },
+      "value_still_present_after_merged_mask": {
+        "delete": 32,
+        "generic": 32,
+        "typed": 32
+      }
+    },
+    "PHONE": {
+      "n": 3336,
+      "found": 3336,
+      "detector_recall": 1.0,
+      "found_full_span": 3336,
+      "full_span_recall": 1.0,
+      "value_still_present_after_literal_mask": {
+        "delete": 0,
+        "generic": 0,
+        "typed": 0
+      },
+      "value_still_present_after_merged_mask": {
+        "delete": 0,
+        "generic": 0,
+        "typed": 0
+      }
+    }
+  },
+  "overall_detector_recall": 0.9966
+}
