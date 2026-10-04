@@ -1,1 +1,2 @@
+# PrivacyGuard M2 reproducibility dependency
 Faker==37.12.0
