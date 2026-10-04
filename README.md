@@ -8,15 +8,19 @@ PrivacyGuard is the S553 Milestone 2 project for a controlled study of how PII s
 - `verify_evidence.py` — verifies an existing generated evidence package, including hashes, row counts, joins, removal checks, eligibility logic, sample values, and human-review coverage.
 - `requirements.txt` — pinned Python dependencies.
 
-## Reproduce the evidence
+## Reproduce and verify the evidence
+
+The repository includes the frozen data/evidence snapshot used by the M2 presentation.
 
 ```bash
 python -m pip install -r requirements.txt
-python prepare_data.py --acquired-date 2026-10-03 --generated-date 2026-10-03
+python prepare_data.py --download
 python verify_evidence.py
 ```
 
-Generated files are written under `data/` and are intentionally ignored by Git because they can be rebuilt from the verified public source files.
+`prepare_data.py` rebuilds the machine-generated evidence from the verified BANKING77 source files using Faker 37.12.0 and seed 553. It writes the deterministic pre-review sheet to `data/human_review_24.pre_review.csv` and deliberately does **not** overwrite the completed human-reviewed artifact `data/human_review_24.csv`.
+
+`verify_evidence.py` checks the frozen source hashes, joins, counts, sanitization outputs, eligibility logic, the completed 24-record human review, and hashes recorded in `data/source_manifest.json`.
 
 ## Project documentation
 
