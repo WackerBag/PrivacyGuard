@@ -165,7 +165,7 @@ def main():
         check(meta["sha256"] == sha256(D/name), f"derived hash mismatch: {name}")
         check(meta["bytes"] == (D/name).stat().st_size, f"derived byte count mismatch: {name}")
 
-    print("VERIFIED: PrivacyGuard M2 evidence is internally consistent with the v2 presentation.")
+    print("VERIFIED: PrivacyGuard M2 evidence is internally consistent with the final presentation.")
     print("13,083 source rows | 13,083 injections | 52,332 variants | 39,249 sanitized passes")
     print("9,992 eligible train + 3,080 official test | 52,288 four-condition modeling rows")
     print("24 human-gate records | seed 553 | Faker 37.12.0 | 0 known-value removal failures")
