@@ -1,0 +1,341 @@
+{
+  "summary": {
+    "records_checked": 13083,
+    "seed": 553,
+    "address_rule": true,
+    "records_with_overlapping_spans": 5861,
+    "by_type": {
+      "ADDRESS": {
+        "n": 3351,
+        "found": 3351,
+        "detector_recall": 1.0,
+        "found_full_span": 3351,
+        "full_span_recall": 1.0,
+        "value_still_present_after_literal_mask": {
+          "delete": 0,
+          "generic": 0,
+          "typed": 0
+        },
+        "value_still_present_after_merged_mask": {
+          "delete": 0,
+          "generic": 0,
+          "typed": 0
+        }
+      },
+      "EMAIL": {
+        "n": 3161,
+        "found": 3161,
+        "detector_recall": 1.0,
+        "found_full_span": 3161,
+        "full_span_recall": 1.0,
+        "value_still_present_after_literal_mask": {
+          "delete": 0,
+          "generic": 0,
+          "typed": 0
+        },
+        "value_still_present_after_merged_mask": {
+          "delete": 0,
+          "generic": 0,
+          "typed": 0
+        }
+      },
+      "PERSON": {
+        "n": 3235,
+        "found": 3191,
+        "detector_recall": 0.9864,
+        "found_full_span": 3101,
+        "full_span_recall": 0.9586,
+        "value_still_present_after_literal_mask": {
+          "delete": 32,
+          "generic": 32,
+          "typed": 32
+        },
+        "value_still_present_after_merged_mask": {
+          "delete": 32,
+          "generic": 32,
+          "typed": 32
+        }
+      },
+      "PHONE": {
+        "n": 3336,
+        "found": 3336,
+        "detector_recall": 1.0,
+        "found_full_span": 3336,
+        "full_span_recall": 1.0,
+        "value_still_present_after_literal_mask": {
+          "delete": 0,
+          "generic": 0,
+          "typed": 0
+        },
+        "value_still_present_after_merged_mask": {
+          "delete": 0,
+          "generic": 0,
+          "typed": 0
+        }
+      }
+    },
+    "overall_detector_recall": 0.9966
+  },
+  "first_30_misses": [
+    {
+      "record_id": "B77_test_00540",
+      "type": "PERSON",
+      "value": "Alison Simmons",
+      "text": "How can I unlock my pin from too many tries? My name is Alison Simmons.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_00920",
+      "type": "PERSON",
+      "value": "Bianca Stuart",
+      "text": "Where can I obtain my virtual card? My name is Bianca Stuart.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_00980",
+      "type": "PERSON",
+      "value": "Tiffany Ruiz",
+      "text": "What stores will take my credit card as payment? My name is Tiffany Ruiz.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_01525",
+      "type": "PERSON",
+      "value": "Autumn Davidson",
+      "text": "My password isn't being accepted and I need to reset it. My name is Autumn Davidson.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_01802",
+      "type": "PERSON",
+      "value": "Morgan Jackson",
+      "text": "Why was my card payment declined? My name is Morgan Jackson.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_01817",
+      "type": "PERSON",
+      "value": "Savannah Thompson",
+      "text": "Do you know why my card payment did not work? My name is Savannah Thompson.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_02103",
+      "type": "PERSON",
+      "value": "Mercedes Edwards",
+      "text": "Why was my card payment cancelled? My name is Mercedes Edwards.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_test_02521",
+      "type": "PERSON",
+      "value": "Tyler York",
+      "text": "My name is Tyler York. My disposable virtual card doesn't seem to work",
+      "detected": [
+        [
+          "LOCATION",
+          11,
+          21,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_test_03019",
+      "type": "PERSON",
+      "value": "Daniel Cross",
+      "text": "My name is Daniel Cross. What are the steps to verify my identity?",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_00064",
+      "type": "PERSON",
+      "value": "Sydney Henry",
+      "text": "I haven't gotten my new card. My name is Sydney Henry.",
+      "detected": [
+        [
+          "LOCATION",
+          41,
+          53,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_train_00179",
+      "type": "PERSON",
+      "value": "Shannon Mills",
+      "text": "My name is Shannon Mills. How do I link a new card in the app?",
+      "detected": [
+        [
+          "LOCATION",
+          11,
+          24,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_train_00478",
+      "type": "PERSON",
+      "value": "Savannah Maldonado",
+      "text": "I bought an item then noticed the exchange rate was wrong. My name is Savannah Maldonado.",
+      "detected": [
+        [
+          "LOCATION",
+          70,
+          88,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_train_00812",
+      "type": "PERSON",
+      "value": "Brittany Morris",
+      "text": "My name is Brittany Morris. how long will my cash withdrawal be pending for?",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_01093",
+      "type": "PERSON",
+      "value": "Tiffany Brown MD",
+      "text": "Can i choose a specific delivery date? My name is Tiffany Brown MD.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_01360",
+      "type": "PERSON",
+      "value": "Tiffany Mcdonald",
+      "text": "My name is Tiffany Mcdonald. Does the app allowing exchanges between USD and GBP",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_01403",
+      "type": "PERSON",
+      "value": "Mitchell Gamble",
+      "text": "Do you support changing the currency I use? My name is Mitchell Gamble.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_01437",
+      "type": "PERSON",
+      "value": "Cynthia Cross",
+      "text": "What's the process of changing from GBP to AUD? My name is Cynthia Cross.",
+      "detected": [
+        [
+          "DATE_TIME",
+          36,
+          39,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_train_01474",
+      "type": "PERSON",
+      "value": "Amber Klein",
+      "text": "Can I use this app to change money? My name is Amber Klein.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_01652",
+      "type": "PERSON",
+      "value": "Bryan Wood",
+      "text": "My name is Bryan Wood. How old do you need to be to have an account?",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_02133",
+      "type": "PERSON",
+      "value": "Troy Avila",
+      "text": "My name is Troy Avila. I don't need to transfer anymore and I want to cancel it.",
+      "detected": [
+        [
+          "LOCATION",
+          11,
+          21,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_train_02363",
+      "type": "PERSON",
+      "value": "Amber Jones",
+      "text": "I got $20 when I should've gotten $100 My name is Amber Jones.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_03150",
+      "type": "PERSON",
+      "value": "Jessica Little",
+      "text": "Do all businesses take this card? My name is Jessica Little.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_03187",
+      "type": "PERSON",
+      "value": "Amber Moore",
+      "text": "I need someone to find out where my money has gone to? It has disappeared. I completed a top up earlier and seen it had went through. Since it has now disappeared I need to know what's going on. My name is Amber Moore.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_03205",
+      "type": "PERSON",
+      "value": "Kimberly York",
+      "text": "When I top-up, the app reverts it. My name is Kimberly York.",
+      "detected": [
+        [
+          "LOCATION",
+          46,
+          59,
+          0.85
+        ]
+      ]
+    },
+    {
+      "record_id": "B77_train_03940",
+      "type": "PERSON",
+      "value": "Tiffany Wilson",
+      "text": "The app doesn't think that I am myself My name is Tiffany Wilson.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_04048",
+      "type": "PERSON",
+      "value": "April Hood",
+      "text": "What's my pin number? My name is April Hood.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_04148",
+      "type": "PERSON",
+      "value": "Autumn Freeman",
+      "text": "My name is Autumn Freeman. Visa or Mastercard?",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_04183",
+      "type": "PERSON",
+      "value": "Sierra May",
+      "text": "My name is Sierra May. Can I choose between Visa or MasterCard?",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_04890",
+      "type": "PERSON",
+      "value": "Mason Payne",
+      "text": "I'm locked out of my account as I can't remember my code, what do I do now? My name is Mason Payne.",
+      "detected": []
+    },
+    {
+      "record_id": "B77_train_05064",
+      "type": "PERSON",
+      "value": "Nathan Greene",
+      "text": "My name is Nathan Greene. Why am I unable to withdrawal cash?",
+      "detected": []
+    }
+  ],
+  "total_misses": 44
+}

@@ -69,3 +69,34 @@ Adding a regex tuned to Faker's address shapes lifts ADDRESS found from 33.6% to
 .\.venv-presidio\Scripts\python.exe evidence\address_rule_checks.py fp
 .\.venv-presidio\Scripts\python.exe evidence\presidio_pilot_v2.py --ledger data\pii_injections.jsonl --texts data\variants.jsonl --all --address-rule --out evidence\presidio_pilot_full_address_rule.json
 ```
+
+## After case-sensitivity fix
+
+Fix: in `evidence/address_recognizer.py` the state code is now `(?-i:[A-Z]{2})` and the military region code is `(?-i:A[AEP])`. Presidio uses the `regex` module, which accepts this scoped flag (also checked in Python `re`), so no alternative was needed. Nothing else in the pattern changed.
+
+Verification without Presidio, using Presidio's flags (`re.IGNORECASE | re.DOTALL | re.MULTILINE`): ADDRESS rows **3,351 full, 0 partial, 0 none**; **0 false positives on all 9,732 non-ADDRESS rows**. The case-sensitive run gives the same numbers. Files: `evidence/address_rule_regex_v2.json`.
+
+Full re-run, all 13,083 records, seed 553 (`evidence/presidio_pilot_full_address_rule_v2.json`). The merged-mask and literal-mask numbers were identical in every cell.
+
+| Type | n | found | full span | value left after delete / generic / typed |
+|---|---|---|---|---|
+| ADDRESS | 3,351 | 3,351 | 3,351 | 0 / 0 / 0 |
+| EMAIL | 3,161 | 3,161 | 3,161 | 0 / 0 / 0 |
+| PERSON | 3,235 | 3,191 | 3,101 | 32 / 32 / 32 |
+| PHONE | 3,336 | 3,336 | 3,336 | 0 / 0 / 0 |
+
+- Overall detector recall (found): **0.9966** (13,039 of 13,083), unchanged from the pre-fix rule run. Records with overlapping spans: 5,861.
+- The four records that were only partly covered before (B77_train_00578, B77_train_02348, B77_train_02404, B77_test_00793) are now fully covered: ADDRESS full span rose from 3,347 to 3,351, and none of them appears in the miss list.
+- False positives: Presidio + rule over the 9,732 non-ADDRESS records gives **0** ADDRESS detections that do not overlap the injected span (`evidence/address_rule_fp_v2.json`).
+- Remaining misses: **44, all PERSON** (no ADDRESS, EMAIL or PHONE misses). Examples, all detected as nothing: B77_test_00540 (Alison Simmons), B77_test_00920 (Bianca Stuart), B77_test_00980 (Tiffany Ruiz), B77_test_01525 (Autumn Davidson), B77_test_01802 (Morgan Jackson).
+- The "value left" metric counts only the complete injected value still present. Full-span coverage of 3,351 of 3,351 means no ADDRESS value is partly left either.
+
+Caveat (unchanged): the rule is tuned to the synthetic Faker en_US address shapes in this ledger and is not claimed to generalize to real-world addresses, other locales or other sentence templates.
+
+Commands:
+
+```powershell
+.\.venv-presidio\Scripts\python.exe evidence\address_rule_checks.py regex --out evidence\address_rule_regex_v2.json
+.\.venv-presidio\Scripts\python.exe evidence\address_rule_checks.py fp --out evidence\address_rule_fp_v2.json
+.\.venv-presidio\Scripts\python.exe evidence\presidio_pilot_v2.py --ledger data\pii_injections.jsonl --texts data\variants.jsonl --all --address-rule --out evidence\presidio_pilot_full_address_rule_v2.json
+```
