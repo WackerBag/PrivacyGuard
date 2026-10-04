@@ -12,7 +12,8 @@ EXPECTED = {
 REQUIRED = [
     "train.csv", "test.csv", "banking_records.jsonl", "pii_injections.jsonl",
     "variants.jsonl", "eligibility.jsonl", "profile.json", "source_manifest.json",
-    "review_samples.jsonl", "human_review_24.csv", "evidence_summary.json",
+    "review_samples.jsonl", "human_review_24.pre_review.csv", "human_review_24.csv",
+    "evidence_summary.json",
 ]
 
 def norm(t):
@@ -128,11 +129,27 @@ def main():
     check(len(review) == 96 and len(review_ids) == 24, "human-gate sample size mismatch")
     coverage = collections.Counter((span_by_id[rid]["pii_type"], span_by_id[rid]["template_id"]) for rid in review_ids)
     check(set(coverage.values()) == {3} and len(coverage) == 8, f"human-gate coverage mismatch: {coverage}")
+    with (D/"human_review_24.pre_review.csv").open(encoding="utf-8", newline="") as f:
+        pre_review_csv = list(csv.DictReader(f))
+    check(len(pre_review_csv) == 24, "human_review_24.pre_review.csv row count mismatch")
+    check({r["record_id"] for r in pre_review_csv} == review_ids, "pre-review IDs mismatch")
+    check(set(r["review_status"] for r in pre_review_csv) == {"PENDING_M3_SIGNOFF"}, "pre-review status mismatch")
+
     with (D/"human_review_24.csv").open(encoding="utf-8", newline="") as f:
         review_csv = list(csv.DictReader(f))
     check(len(review_csv) == 24, "human_review_24.csv row count mismatch")
     check({r["record_id"] for r in review_csv} == review_ids, "human_review_24.csv IDs mismatch")
-    check(set(r["review_status"] for r in review_csv) == {"PENDING_M3_SIGNOFF"}, "human review status mismatch")
+    check(set(r["review_status"] for r in review_csv) == {"APPROVED"}, "human review approval status mismatch")
+    check(set(r["reviewer"] for r in review_csv) == {"Carson Morris"}, "human reviewer mismatch")
+    check(set(r["review_date"] for r in review_csv) == {"2026-10-04"}, "human review date mismatch")
+
+    # Human review may add reviewer/date/note fields, but the prepared evidence
+    # itself must be unchanged from the deterministic pre-review sheet.
+    compare_fields = ["record_id","category","pii_type","placement","source_text","raw","delete","generic","typed"]
+    pre_by_id = {r["record_id"]: r for r in pre_review_csv}
+    for r in review_csv:
+        p = pre_by_id[r["record_id"]]
+        check(all(r[k] == p[k] for k in compare_fields), f"human review altered prepared evidence: {r['record_id']}")
 
     check(summary["source_rows"] == 13083 and summary["variant_rows"] == 52332, "evidence summary mismatch")
     check(summary["sanitized_known_value_absence_passed"] == 39249, "evidence summary removal count mismatch")
